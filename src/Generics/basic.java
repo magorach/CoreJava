@@ -12,14 +12,25 @@ public class basic {
 //        display(arr1);
 
 
+//
+//        Box <String> obj1 = new Box<>();;
+//        obj1.setValue("Hello");
+//        System.out.println("value"+" : "+ obj1.getValue());
+//
+//        Box<Integer> obj2 = new Box<>();
+//        obj2.setValue(10);
+//        System.out.println("value"+" : "+ obj2.getValue());
 
-        Box <String> obj1 = new Box<>();;
-        obj1.setValue("Hello");
-        System.out.println("value"+" : "+ obj1.getValue());
 
-        Box<Integer> obj2 = new Box<>();
-        obj2.setValue(10);
-        System.out.println("value"+" : "+ obj2.getValue());
+
+        Integer [] intNUms = {10,20,30,40};
+        Double [] doubleNUms = {1.5,2.5,3.5};
+        Stats<Integer> intSTats = new Stats<>(intNUms);
+        System.out.println(intSTats.average());
+        Stats<Double> doubleSTats = new Stats<>(doubleNUms);
+        System.out.println(doubleSTats.average());
+
+
 
 
     }
