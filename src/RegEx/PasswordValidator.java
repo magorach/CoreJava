@@ -33,6 +33,19 @@ public class PasswordValidator {
         String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$";
         Pattern p = Pattern.compile(regex);
 
+        //. → matches any single character
+        //
+        //* → means zero or more times
+        //
+        //Together: .* = “any characters, of any length (including none)”
+        //
+        //    .*[a-z] → checks if somewhere there’s a lowercase letter.
+        //
+        //    .*[A-Z] → checks if somewhere there’s an uppercase letter.
+        //
+        //    Same for digits and special chars.
+        //Without .*, your password would only pass if the first character was lowercase, the second uppercase, the third digit, and so on — which is not what we want.
+
         for (String pwd : passwords) {
             Matcher m = p.matcher(pwd);
             if (m.matches()) {
