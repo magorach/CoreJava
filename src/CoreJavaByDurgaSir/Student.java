@@ -29,6 +29,9 @@ public class Student {
 
 //    @Override
 //    public boolean equals(Object o) {
+//        if(this == o){
+//            return true;
+//        }
 //        if (!(o instanceof Student student)) return false;
 //        return rollno == student.rollno && Objects.equals(name, student.name);
 //    }
@@ -37,13 +40,21 @@ public class Student {
 
     @Override
     public boolean equals(Object obj){
-        String name1 = this.name;
-        int rollno1 = this.rollno;
-        Student s = (Student)obj;
-        String name2 = s.name;
-        int rollno2 = s.rollno;
-        if(name1.equals(name2) && rollno1 == rollno2) return true;
-        else return false;
+           if ( this == obj){
+               return true;
+           }
+        try {
+            String name1 = this.name;
+            int rollno1 = this.rollno;
+            Student s = (Student) obj;
+            String name2 = s.name;
+            int rollno2 = s.rollno;
+            if (name1.equals(name2) && rollno1 == rollno2) return true;
+            else return false;
+        }
+        catch (ClassCastException | NullPointerException e){
+            return false;
+        }
     }
     //---------> manual -> 1)No type check → if obj is not a Student, you’ll get a ClassCastException
     //                     2) NO null check
@@ -64,8 +75,10 @@ public class Student {
         Student s3 = new Student("Rachit",101);
         Student s4 =s1;
         System.out.println(s1.equals(s2));  //false
-        System.out.println(s1.equals(s3));  //false -----> object's class equals method run by default
+        System.out.println(s1.equals(s3));  //false -----> object's class equals method run by default but true when we override the method then it compares content
         System.out.println(s1.equals(s4)); // true
+        System.out.println(s1.equals("Rachit"));  //false
+        System.out.println(s2.equals(null)); //false
 
 
 //
