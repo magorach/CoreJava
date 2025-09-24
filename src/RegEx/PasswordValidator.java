@@ -44,7 +44,7 @@ public class PasswordValidator {
         //    .*[A-Z] → checks if somewhere there’s an uppercase letter.
         //
         //    Same for digits and special chars.
-        //Without .*, your password would only pass if the first character was lowercase, the second uppercase, the third digit, and so on — which is not what we want.
+        //Without .*, your password would only pass if the first character was lowercase, the  second uppercase, the third digit, and so on — which is not what we want.
 
         for (String pwd : passwords) {
             Matcher m = p.matcher(pwd);

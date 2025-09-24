@@ -2,11 +2,11 @@ package CoreJavaByDurgaSir.Objectclone;
 
 class Student {
     int id;
-    Address address;
+    PermanentAddress address;
 
 
     //normal constructor
-    public Student(int id, Address address) {
+    public Student(int id, PermanentAddress address) {
         this.id = id;
         this.address = address;
     }
@@ -14,10 +14,11 @@ class Student {
     //copy constructor
     public Student(Student other) {
         this.id = other.id;
-        this.address = new Address(other.address.city); // deep copy
+        this.address = new PermanentAddress(other.address.city); // deep copy
 //          this.address=other.address;  //shallow copy
 
     }
+
 }
 
 class PermanentAddress {
@@ -33,7 +34,7 @@ class PermanentAddress {
 public class copyConst {
     public static void main(String[] args) {
 
-        Student s1 = new Student(101, new Address("Delhi"));
+        Student s1 = new Student(101, new PermanentAddress("Delhi"));
         Student s2 = new Student(s1);
         s2.id = 102;
         s2.address.city = "Mumbai";

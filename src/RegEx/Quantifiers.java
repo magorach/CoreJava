@@ -21,27 +21,27 @@ public class Quantifiers {
 //        }
 
         //  n? ->  Matches any string that contains zero or one occurrences of n
-//        Pattern p = Pattern.compile("a?");
-//        Matcher m = p.matcher("caaat");
-//        while (m.find()) {
-//            System.out.println("'" + m.group() + "'");
-//        }
+        Pattern p = Pattern.compile("a?");
+        Matcher m = p.matcher("caaat");
+        while (m.find()) {
+            System.out.println("'" + m.group() + "'");
+        }
 
 
         //Interview question - built in trim v/s by regex ---> remove white spaces
 
-        String input = "  Hello World  ";
-
-        //by built in
-        String trimmed1 =input.trim();
-
-
-        // by regex
-        Pattern  p = Pattern.compile("^\\s* | \\s$*");
-        Matcher m = p.matcher(input);
-        String trimmed2 = m.replaceAll("");
-        System.out.println(trimmed1);
-        System.out.println(trimmed2);
+//        String input = "  Hello World  ";
+//
+//        //by built in
+//        String trimmed1 =input.trim();
+//
+//
+//        // by regex
+//        Pattern  p = Pattern.compile("^\\s* | \\s$*");
+//        Matcher m = p.matcher(input);
+//        String trimmed2 = m.replaceAll("");
+//        System.out.println(trimmed1);
+//        System.out.println(trimmed2);
 
 
 

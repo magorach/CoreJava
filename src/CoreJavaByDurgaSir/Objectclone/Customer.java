@@ -12,7 +12,7 @@ public class Customer implements Cloneable{
 
 //    @Override
 //    protected Object clone() throws CloneNotSupportedException {
-//        return super.clone();
+//        return super.clone();  // shallow copy
 //    }
 
     //deep copy with clone

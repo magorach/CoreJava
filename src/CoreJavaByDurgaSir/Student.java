@@ -70,15 +70,21 @@ public class Student {
 
     public static void main(String[] args) {
 
-        Student s1 = new Student("Rachit",101);
-        Student s2 = new Student("Sumit",102);
-        Student s3 = new Student("Rachit",101);
-        Student s4 =s1;
-        System.out.println(s1.equals(s2));  //false
-        System.out.println(s1.equals(s3));  //false -----> object's class equals method run by default but true when we override the method then it compares content
-        System.out.println(s1.equals(s4)); // true
-        System.out.println(s1.equals("Rachit"));  //false
-        System.out.println(s2.equals(null)); //false
+//        Student s1 = new Student("Rachit",101);
+//        Student s2 = new Student("Sumit",102);
+//        Student s3 = new Student("Rachit",101);
+//        Student s4 =s1;
+//        System.out.println(s1.equals(s2));  //false
+//        System.out.println(s1.equals(s3));  //false -----> object's class equals method run by default but true when we override the method then it compares content
+//        System.out.println(s1.equals(s4)); // true
+//        System.out.println(s1.equals("Rachit"));  //false
+//        System.out.println(s2.equals(null)); //false
+
+        String s1 = "Durga";
+        String s2 = new String("Durga");
+        System.out.println(s1.equals(s2));
+
+
 
 
 //
