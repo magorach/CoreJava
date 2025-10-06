@@ -1,10 +1,11 @@
 package RegEx;
 
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PhoneBook {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         // Example of n{x,y}
         //{1,3} works internally:It tries to take minimum 1 digit, then expands up to 3 digits (greedy), but stops if the next character doesn’t match the rule.
@@ -27,9 +28,6 @@ public class PhoneBook {
             String areaCOde = m.group(2);
             System.out.println("Country Code:" + countryCode + ", Area Code:" + areaCOde);
         }
-
-
-
 
     }
 }
