@@ -36,9 +36,10 @@ public class copyConst {
 
         Student s1 = new Student(101, new PermanentAddress("Delhi"));
         Student s2 = new Student(s1);
+        System.out.println(s2.id+ " "+ s2.address.city);
         s2.id = 102;
         s2.address.city = "Mumbai";
-        System.out.println(s1.id + " and " + s1.address.city);
+//        System.out.println(s1.id + " and " + s1.address.city);
         System.out.println(s2.id + " and " + s2.address.city);
     }
 

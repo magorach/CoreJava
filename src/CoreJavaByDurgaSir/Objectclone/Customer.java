@@ -19,7 +19,7 @@ public class Customer implements Cloneable{
     @Override
     public Object clone() throws CloneNotSupportedException {
         Customer cloned = (Customer) super.clone(); // shallow copy of primitives + references
-        cloned.address = (Address) this.address.clone(); // deep copy of Address
+        cloned.address = (Address) this.address.clone(); // deep copy of Address ---> cloning the Address object itself
         return cloned;
     }
 }
