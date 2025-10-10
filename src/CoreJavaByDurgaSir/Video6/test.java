@@ -15,6 +15,7 @@ public class test {
 
         List<String> skillSet = new ArrayList<>();
         skillSet.add("Java");
+        skillSet.add("SQL");
         Customer c1 = new Customer("Rachit",skillSet);
         System.out.println(c1.getSkills());
         skillSet.add("SpringBoot");
