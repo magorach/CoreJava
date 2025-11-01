@@ -47,5 +47,9 @@ public class QuestionsOnStreams {
         System.out.println(words2.stream().collect(Collectors.groupingBy(word -> word,Collectors.counting()))); //->  {orange=1, banana=2, apple=3}
         System.out.println(words2.stream().collect(Collectors.toMap(k-> k, v-> 1,(x,y)-> x+y)));
 
+        //6) using to map and find count of elements
+        List<String> words2 = Arrays.asList("apple","banana","apple","orange","banana","apple");
+        System.out.println(words2.stream().collect(Collectors.groupingBy(word -> word,Collectors.counting()))); //->  {orange=1, banana=2, apple=3}
+        System.out.println(words2.stream().collect(Collectors.toMap(k-> k, v-> 1,(x,y)-> x+y)));
     }
 }
