@@ -32,7 +32,7 @@ public class QuestionsOnStreams {
         items.put("Orange",30);
         System.out.println(items.values().stream().reduce(Integer::sum).get());  //-> 60
 
-        // second way to do that
+        // second way
         System.out.println(items.values().stream().collect(Collectors.summingInt(x-> x)));
 
         //5) create a map from stream elements
