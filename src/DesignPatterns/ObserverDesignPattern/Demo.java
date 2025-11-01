@@ -19,6 +19,8 @@ public class Demo {
         channel.notifySubscribers("Learn Design pattern");
         channel.unsubscribe(aman);
         channel.notifySubscribers("Spring-boot Course");
+
+        //console system
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true){
 

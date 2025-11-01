@@ -7,12 +7,13 @@ public class Dog {
     private String breed;    // cannot change
     private double price;
 
-    public Dog(DogBuilder dogBuilder) {
+    private Dog(DogBuilder dogBuilder) {
         this.name = dogBuilder.getName();
         this.gender= dogBuilder.getGender();
         this.breed = dogBuilder.getBreed();
         this.price= dogBuilder.getPrice();
     }
+
 
     @Override
     public String toString() {
