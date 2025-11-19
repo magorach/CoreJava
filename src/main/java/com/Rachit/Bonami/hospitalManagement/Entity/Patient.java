@@ -1,5 +1,6 @@
 package com.Rachit.Bonami.hospitalManagement.Entity;
 
+import com.Rachit.Bonami.hospitalManagement.Entity.type.BloodGroupType;
 import com.sun.tools.javac.Main;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,41 +15,43 @@ import java.util.Iterator;
 import java.util.Map;
 
 @Entity
-@ToString
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(
-        name= "patient_tbl",
+        name = "patient_tbl",
         uniqueConstraints = {
-//                @UniqueConstraint(name ="unique_patient_email",columnNames = {"email"}),
-                @UniqueConstraint(name = "unique_patient_by_name_birthdate",columnNames = {"name","birthDate"})
+                @UniqueConstraint(
+                        name = "unique_patient_by_name_birthdate",
+                        columnNames = {"name", "birth_date"}
+                )
         },
         indexes = {
-                @Index(name = "idx_patient_birthdate", columnList = "birthDate")
+                @Index(name = "idx_patient_birthdate", columnList = "birth_date")
         }
-
 )
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "patient_name",nullable = false )
+    @Column(nullable = false)
     private String name;
 
-    private String bloodGroup;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "blood_group")
+    private BloodGroupType bloodGroup;
 
+    @Column(name = "birth_date", nullable = false)
     private LocalDateTime birthDate;
 
     private String gender;
 
-    @Column( unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @CreationTimestamp
-    @Column(updatable = false)
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 }
-
