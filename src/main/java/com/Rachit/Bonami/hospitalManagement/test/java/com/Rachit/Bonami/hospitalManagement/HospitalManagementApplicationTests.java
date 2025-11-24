@@ -55,8 +55,8 @@ public class HospitalManagementApplicationTests {
 //        List<BloodGroupCountResponseEntity> bloodGroupCountResponseEntities = patientRepository.countEachBloodGroupType();
 //        System.out.println(bloodGroupCountResponseEntities);
 
-        Page<Patient> patientList = patientRepository.findAllPatients(PageRequest.of(1,3, Sort.by("name")));
-        System.out.println(patientList.getContent());
+//        Page<Patient> patientList = patientRepository.findAllPatients(PageRequest.of(1,3, Sort.by("name")));
+//        System.out.println(patientList.getContent());
 
     }
 }

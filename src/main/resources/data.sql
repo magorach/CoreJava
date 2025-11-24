@@ -10,3 +10,17 @@ VALUES
 ('1982-01-23 00:00:00', 'AB_NEGATIVE','sanjay.kumar@example.com', 'Male', 'Sanjay Kumar'),
 ('1998-05-12 00:00:00', 'A_POSITIVE','ritu.singh@example.com', 'Female', 'Ritu Singh'),
 ('1991-10-07 00:00:00', 'B_POSITIVE','rahul.mishra@example.com', 'Male', 'Rahul Mishra');
+
+INSERT INTO doctor (name, specialization, email)
+VALUES ('Dr. Rachit Mago', 'Cardiologist', 'rachit.mago@hospital.com'),
+('Dr. Sneha Sharma', 'Dermatologist', 'sneha.sharma@hospital.com'),
+('Dr. Aman Verma', 'Orthopedic', 'aman.verma@hospital.com');
+
+INSERT INTO appointment (appointment_time, reason, patient_id, doctor_id)
+VALUES
+('2025-11-21 10:30:00', 'General Checkup', 1, 1),
+('2025-11-22 14:00:00', 'Skin Allergy Consultation', 3, 2),
+('2025-11-23 09:15:00', 'Bone Pain Follow-Up', 6, 3),
+('2025-11-24 16:45:00', 'Chest Pain & ECG Review', 4, 1),
+('2025-11-25 11:00:00', 'Hair Loss Treatment', 7, 2);
+

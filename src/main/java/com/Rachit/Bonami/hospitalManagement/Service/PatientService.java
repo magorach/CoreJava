@@ -11,6 +11,7 @@ import org.springframework.web.service.annotation.PatchExchange;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,4 +45,9 @@ public class PatientService {
         return patientRepository.findByBirthDate(dobDateTime);
     }
 
+    public  String deletePatient (Long patientId){
+        patientRepository.deleteById(patientId);
+        return "Patient deleted successfully";
+    }
+    
 }

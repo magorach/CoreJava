@@ -3,16 +3,11 @@ package com.Rachit.Bonami.hospitalManagement.Entity;
 import com.Rachit.Bonami.hospitalManagement.Entity.type.BloodGroupType;
 import com.sun.tools.javac.Main;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 @Entity
 @Table(
@@ -27,9 +22,11 @@ import java.util.Map;
                 @Index(name = "idx_patient_birthdate", columnList = "birth_date")
         }
 )
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Patient {
 
     @Id
@@ -54,4 +51,12 @@ public class Patient {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REMOVE},orphanRemoval = true)
+    @JoinColumn( name = "patient_insurance_id")   //owning side
+    private Insurance insurance;
+
+    @OneToMany(mappedBy = "patient",cascade = {CascadeType.REMOVE},orphanRemoval = true )
+    @ToString.Exclude
+    private List<Appointment> appointments = new ArrayList<>();
 }
